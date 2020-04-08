@@ -1,0 +1,14 @@
+[Unit]
+Description=NFCReader
+After=network.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/NFC-reader
+ExecStart=/usr/bin/python -u /home/pi/NFC-reader/nfc.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
